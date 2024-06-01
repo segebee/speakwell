@@ -3,17 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sperapy</title>
+    <title>Speapy</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="images/logo.png" alt="Speapy Logo" />
+      </div>
+      <div class="navbar-right">
+        <button class="cta-button">Get Started</button>
+      </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
       <video autoplay muted loop id="heroVideo">
-        <source src="kids-video.mp4" type="video/mp4" />
+        <source src="images/kids-video2.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay">
-        <h1>Welcome to Sperapy</h1>
+        <h1>Welcome to Speapy</h1>
         <p>
           Empowering kids with speech impairments to speak confidently and
           freely.
@@ -25,7 +39,7 @@
     <!-- How It Works Section -->
     <section class="how-it-works">
       <div class="column">
-        <img src="assessment-icon.png" alt="Assessment Icon" />
+        <img src="images/assessment-icon.png" alt="Assessment Icon" />
         <h2>Take an Assessment</h2>
         <p>
           Start with a simple assessment to understand your child's unique
@@ -33,15 +47,15 @@
         </p>
       </div>
       <div class="column">
-        <img src="ai-icon.png" alt="AI Icon" />
-        <h2>AI Generates a Learning Program</h2>
+        <img src="images/ai-icon.png" alt="AI Icon" />
+        <h2>Choose a Learning Program</h2>
         <p>
           Our AI crafts a personalized program tailored to your child's needs.
         </p>
       </div>
       <div class="column">
-        <img src="rewards-icon.png" alt="Reward Icon" />
-        <h2>Your Kid Learns and Gets Rewarded</h2>
+        <img src="images/rewards-icon.png" alt="Reward Icon" />
+        <h2>Learn and Earn Rewards</h2>
         <p>
           Your child learns through fun exercises and earns rewards for
           progress.
@@ -51,13 +65,27 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Sperapy. All rights reserved.</p>
-      <nav>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Follow Us</a>
-      </nav>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Speapy Logo" />
+        </div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Follow Us</a>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"><img src="images/twitter-icon.png" alt="Twitter" /></a>
+          <a href="#"
+            ><img src="images/instagram-icon.png" alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Speapy. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>
