@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speapy - Emotions Module</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="images/logo.png" alt="Speapy Logo" /></a>
+      </div>
+      <div class="navbar-right">
+        <a href="index.html" class="cta-button">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Emotions Module Section -->
+    <section class="emotions-module">
+      <div class="module-container">
+        <h1>Emotions Module</h1>
+        <p>
+          Let's learn how to pronounce different emotions! Look at the image and
+          say the emotion out loud.
+        </p>
+
+        <div class="interactive-area">
+          <img
+            src="images/smiling-child.webp"
+            alt="Child Smiling"
+            class="emotion-image"
+          />
+          <p class="instruction">What emotion is this?</p>
+          <img src="images/robot.gif" class="robot" />
+          <button id="startButton" class="cta-button"></button>
+          <p id="feedback" class="feedback"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Speapy Logo" />
+        </div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Follow Us</a>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"><img src="images/twitter-icon.png" alt="Twitter" /></a>
+          <a href="#"
+            ><img src="images/instagram-icon.png" alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Speapy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("startButton")
+        .addEventListener("click", startListening);
+
+      startListening();
+      // Simulate AI listening and processing
+      function startListening() {
+        document.getElementById("feedback").textContent = "Listening...";
+
+        setTimeout(function () {
+          // Example feedback logic
+          const correctEmotion = "happy"; // This would be determined by the AI
+          const userPronunciation = "happy"; // This would be captured from the user's speech
+
+          if (userPronunciation.toLowerCase() === correctEmotion) {
+            document.getElementById("feedback").textContent =
+              "Great job! You pronounced it correctly.";
+
+            document.getElementById("startButton").textContent = "Try Again";
+
+            (function frame() {
+              // launch a few confetti from the left edge
+              confetti({
+                particleCount: 1000,
+                angle: 60,
+                spread: 500,
+                origin: { x: 0 },
+              });
+              // and launch a few from the right edge
+              confetti({
+                particleCount: 1000,
+                angle: 120,
+                spread: 500,
+                origin: { x: 1 },
+              });
+
+              // keep going until we are out of time
+              if (Date.now() < end) {
+                requestAnimationFrame(frame);
+              }
+            })();
+          } else {
+            document.getElementById("feedback").textContent =
+              "Try again. That was not quite right.";
+          }
+        }, 3000); // Simulate processing time
+      }
+    </script>
+  </body>
+</html>
